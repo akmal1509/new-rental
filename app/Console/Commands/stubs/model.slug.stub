@@ -1,0 +1,23 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class {{ class }} extends Model
+{
+    use HasFactory, Sluggable, SoftDeletes;
+    protected $guarded = ['id'];
+
+     public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ],
+        ];
+    }
+}

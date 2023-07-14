@@ -1,0 +1,143 @@
+/*Tablet breakpoint*/
+@media(max-width:1024px) {
+
+    /*Mobile nav column    */
+    #nav-container {
+        display: none;
+        overflow: hidden;
+        /*background: white;*/
+    }
+
+    .elementor-sticky--effects #column-nav-mobile {
+
+        background: #ffffff !important;
+        transition: background 0.5s ease-in-out;
+
+    }
+
+    .elementor-sticky--effects .nav-icon i {
+        color: black;
+        transition: color 0.5s ease-in-out;
+    }
+
+    .header-front-page li a {
+        color: black;
+    }
+
+    .header-front-page li:last-of-type a {
+        color: white !important;
+    }
+
+    .header-front-page {
+        background: white;
+        padding: 10px 0px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.13);
+        -webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.13);
+        -moz-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.13);
+    }
+
+    .elementor-nav-menu {
+        width: 100%;
+    }
+
+    /*Switch nav widget to verticle on mobile    */
+    .elementor-nav-menu--layout-horizontal .elementor-nav-menu {
+        /*background: white;*/
+        flex-direction: column !important;
+    }
+
+    /*Make nav widget 100%*/
+    .nav-menu {
+        width: 100% !important;
+    }
+
+    /*Make button widget 100%*/
+    .nav-btn {
+        width: 100% !important;
+    }
+
+}
+
+/*Hide bar icon on desktop*/
+@media(min-width:1025px) {
+    .nav-icon {
+        display: none;
+    }
+
+    /* Change the Background Colour on Scroll */
+    .elementor-sticky--effects {
+        background: #ffffff !important;
+        transition: background 0.5s ease-in-out;
+    }
+}
+
+/*Open bar icon
+    .nav-icon i:before{
+            content: url('');
+    
+    }*/
+
+/*Close bar icon 
+    .nav-icon .change-icon:before{
+            content: url('');
+    
+    }
+    */
+
+/*Button Contac Us*/
+selector .elementor-nav-menu li:last-of-type .elementor-item {
+    display: flex;
+    padding: 0.4em 1.6em;
+    margin: 0.14em 6px;
+    /*margin-left: 6px;*/
+    border: 0.16em solid #5D7AAA;
+    border-radius: 2em;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    background-color: #5D7AAA;
+    justify-content: center;
+}
+
+.elementor-sticky--effects .elementor-nav-menu li:last-of-type .elementor-item {
+    color: white !important;
+}
+
+/*End Button Contac Us*/
+
+/*Header font*/
+.header-front-page .current-menu-item a {
+    font-weight: 700 !important;
+}
+
+.header-front-page li:hover a {
+    font-weight: 700 !important;
+}
+
+/*Header font end*/
+
+
+
+/* The scroll-logo is currently off.*/
+.scroll-logo {
+    display: none;
+}
+
+/* Shut this logo off and activate the other logo after scroll*/
+.elementor-sticky--effects .scroll-logo {
+    display: inline-block;
+    transition: display 0.5s ease-in-out, max-width 0.5s ease-in-out;
+}
+
+.elementor-sticky--effects .original-logo {
+    display: none;
+    transition: display 0.5s ease-in-out;
+}
+
+
+/* Change Text Colour and Links colour */
+.elementor-sticky--effects .header-front-page ul li a {
+    color: #000000 !important;
+    transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out, line-height 0.5s ease-in-out;
+}

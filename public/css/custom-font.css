@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?g7my0x');
+    src: url('fonts/icomoon.eot?g7my0x#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?g7my0x') format('truetype'),
+        url('fonts/icomoon.woff?g7my0x') format('woff'),
+        url('fonts/icomoon.svg?g7my0x#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: inline-block;
+}
+
+[class^="ci-"],
+[class*=" ci-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon';
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+
+.ci-calendar-bold:before {
+    content: "\e900";
+}

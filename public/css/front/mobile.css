@@ -1,0 +1,95 @@
+
+
+@media (max-width: 992px) {
+    /* .container {
+        max-width: 350px;
+    } */
+
+.title-hero {
+    font-size: 56px;
+    font-weight: 700;
+}
+
+    .navbar-collapse {
+        /* padding-bottom: 39px; */
+        transition: all 0.5s;
+    }
+
+    .navbar-collapse.collapsing {
+        position: absolute;
+        top: 80px;
+        left: 0px;
+        width: 100%;
+        z-index: 999;
+        background: black;
+        /* padding-bottom: 39px; */
+        transition: all 0.5s;
+    }
+
+    .navbar-collapse.collapse.show {
+        position: absolute !important;
+        top: 80px;
+        width: 100%;
+        left: 0px;
+        z-index: 999;
+        background: black;
+        /* padding-bottom: 39px; */
+        transition: all 0.5s;
+    }
+
+    .container-single-rent img {
+        width: 100%;
+    }
+
+    .card-recent-blog img {
+        margin-bottom: 10px;
+    }
+
+    .title-recent-post {
+        font-size: 18px;
+    }
+
+    .container-single-rent {
+        margin-bottom: 20px;
+    }
+
+    #searchBar .container {
+        margin-top: -73px;
+    }
+
+    .card-filter {
+        margin-bottom: 20px;
+    }
+
+    #section2 {
+        padding-top: 260px;
+    }
+
+    .content-section-2 p {
+        width: 70%;
+        margin: auto;
+    }
+
+    .content-section2-item:not(:last-of-type),
+    #section4 .card-car:not(:last-of-type) {
+        margin-bottom: 30px;
+    }
+
+    #section2 .content-section-2 p {
+        padding-top: 20px;
+    }
+
+    .img-testimonial {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .testimonial-content {
+        padding-top: 20px;
+    }
+
+    .navbar-nav {
+        padding-bottom: 40px;
+    }
+
+}

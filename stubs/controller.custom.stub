@@ -1,0 +1,15 @@
+<?php
+// stubs/controller.custom.stub
+namespace {namespace};
+ 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+ 
+/**
+ * Hello from the custom controller stub
+ */
+class {ControllerName} extends Controller
+{
+    //
+}
