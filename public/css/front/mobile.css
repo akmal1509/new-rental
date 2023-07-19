@@ -10,6 +10,10 @@
     font-weight: 700;
 }
 
+.social-container{
+    margin-bottom: 28px;
+}
+
     .navbar-collapse {
         /* padding-bottom: 39px; */
         transition: all 0.5s;

@@ -99,3 +99,19 @@
   font-size: 37px;
   color: #6777EF;
 }
+
+button{
+border: none;
+}
+
+.card .nav-link{
+  margin-bottom: 10px;
+  background-color: transparent;
+  color: #6777EF;
+  text-align: left;
+}
+
+.card .nav-link:focus-visible{
+  background-color: transparent;
+  outline: none;
+}

@@ -17,6 +17,7 @@
         "laravel/tinker": "^2.5",
         "laravolt/indonesia": "^0.34.0",
         "maatwebsite/excel": "^3.1",
+        "orangehill/iseed": "^3.0",
         "spatie/laravel-activitylog": "^4.7",
         "spatie/laravel-permission": "^5.10"
     },

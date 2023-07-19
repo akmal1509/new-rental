@@ -42,12 +42,17 @@
         $('#form-contact').on('submit', function(e) {
             e.preventDefault();
             console.log($(this).serialize())
+            // $('#form-contact').reset()
+            swal('Success',
+                'Your data has been send, please wait our time will contact you soon.',
+                'success')
+            $('#form-contact')[0].reset()
             $.ajax({
                 type: 'POST',
                 url: '/send-email-contact',
                 data: $(this).serialize(),
                 success: function(data) {
-                    console.log(data)
+
                 }
             })
         })

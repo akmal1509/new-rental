@@ -59,7 +59,7 @@ class UserPermissionController extends Controller
         // dd($role->permissions->pluck('name')->toArray());
         return view('pages.admin.' . $this->slugData . '.index', [
             'type' => 'index',
-            'permission' => $this->userPermissionRepository->orderBy('asc', 'name'),
+            'permission' => $this->userPermissionRepository->orderBy('name', 'asc'),
             'role' => $this->roleRepository->except(),
             'action' => 'delete'
         ]);
@@ -114,7 +114,7 @@ class UserPermissionController extends Controller
     {
         $role = Role::findByName($request->role);
         $access = $role->permissions->pluck('name')->toArray();
-        $permission = $this->userPermissionRepository->orderBy('asc', 'name');
+        $permission = $this->userPermissionRepository->orderBy('name', 'asc')->get();
         return view('pages.admin.user.permission.access.permission', compact('permission', 'access'))->render();
     }
 

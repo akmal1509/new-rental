@@ -102,6 +102,20 @@ class BaseRepository
         return $detail->update($data);
     }
 
+    public function storeConfiguration($key, $value)
+    {
+        $path = base_path('.env');
+
+        if (file_exists($path)) {
+
+            file_put_contents($path, str_replace(
+                $key . '=' . env($key),
+                $key . '=' . $value,
+                file_get_contents($path)
+            ));
+        }
+    }
+
     /**
      * destroy many item with primary key
      * @param int|Model $id

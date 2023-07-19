@@ -176,7 +176,7 @@ function logout() {
       _token: token,
     },
     success: function (data) {
-      location.replace('/mejakami')
+      location.replace('/administrator')
     },
   })
 }
@@ -190,7 +190,7 @@ window.addEventListener('load', () => {
   }, 200)
 })
 
-function goLog(id, subject, user){
+function goLog(id, subject, user) {
   $.ajax({
     type: 'POST',
     url: '/admin/log',
@@ -207,53 +207,52 @@ function goLog(id, subject, user){
 
 var page = 1;
 infinteLoadMore(page);
-$('.notif-log').scroll(function() { //detect page scroll
-    if ($('.notif-log').scrollTop() + $('.notif-log').height() >= $('.check-height').outerHeight(
-            true)) { //if user scrolled from top to bottom of the page
-        page++; //page number increment
-        console.log('hahahihi')
-        infinteLoadMore(page);
-    }
-    // console.log($('.check-height').outerHeight(true))
+$('.notif-log').scroll(function () { //detect page scroll
+  if ($('.notif-log').scrollTop() + $('.notif-log').height() >= $('.check-height').outerHeight(
+    true)) { //if user scrolled from top to bottom of the page
+    page++; //page number increment
+    console.log('hahahihi')
+    infinteLoadMore(page);
+  }
+  // console.log($('.check-height').outerHeight(true))
 });
 
 function infinteLoadMore(page) {
-    $.ajax({
-            url: ENDPOINT + "/general/header/log?page=" + page,
-            datatype: "html",
-            type: "get",
-            beforeSend: function() {
-                $('.auto-load').show();
-                $(".dropdown-list-icons").getNiceScroll().resize();
-            }
-        })
-        .done(function(response) {
-            if (response.length == 0) {
-                $('.auto-load').html("We don't have more data to display :(");
-                return;
-            }
-            $('.auto-load').hide();
-            $("#notif-header").append(response);
-            $(".dropdown-list-icons").getNiceScroll().resize();
-            console.log(response)
-        })
-        .fail(function(jqXHR, ajaxOptions, thrownError) {
-            console.log('Server error occured');
-        });
+  $.ajax({
+    url: ENDPOINT + "/general/header/log?page=" + page,
+    datatype: "html",
+    type: "get",
+    beforeSend: function () {
+      $('.auto-load').show();
+      $(".dropdown-list-icons").getNiceScroll().resize();
+    }
+  })
+    .done(function (response) {
+      if (response.length == 0) {
+        $('.auto-load').html("We don't have more data to display :(");
+        return;
+      }
+      $('.auto-load').hide();
+      $("#notif-header").append(response);
+      $(".dropdown-list-icons").getNiceScroll().resize();
+      console.log(response)
+    })
+    .fail(function (jqXHR, ajaxOptions, thrownError) {
+      console.log('Server error occured');
+    });
 }
 
-function myNotifLog()
-{
+function myNotifLog() {
   $.ajax({
     type: 'POST',
     url: ENDPOINT + '/general/header/log/notif',
     data: {
-      _token : token
+      _token: token
     },
-    beforeSend: function(){
+    beforeSend: function () {
       $('.nav-link.notification-toggle.nav-link-lg').removeClass('beep')
     },
-    success: function(data){    
+    success: function (data) {
       console.log(data)
     }
   })

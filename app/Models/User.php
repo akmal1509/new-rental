@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Scopes\RoleScope;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
@@ -12,7 +13,16 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+
+
     use HasApiTokens, HasFactory, Notifiable, HasRoles, SoftDeletes;
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new RoleScope);
+    }
 
     /**
      * The attributes that are mass assignable.

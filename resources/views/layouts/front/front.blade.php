@@ -35,9 +35,9 @@
     <!-- Template CSS -->
     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('css/components.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/front/desktop-xl.css') }}?v={{time()}}">
-    <link rel="stylesheet" href="{{ asset('css/front/desktop-lg.css')}}?v={{time()}}">
-    <link rel="stylesheet" href="{{ asset('css/front/mobile.css') }}?v={{time()}}">
+    <link rel="stylesheet" href="{{ asset('css/front/desktop-xl.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/front/desktop-lg.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/front/mobile.css') }}?v={{ time() }}">
 
 </head>
 
@@ -77,6 +77,7 @@
 
     <!--Plugin JavaScript file-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+    <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
 
     @stack('scripts')
 
@@ -101,7 +102,7 @@
             document.body.style.paddingTop = navbar_height + 'px';
         });
     </script>
-    <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
+
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
     <script>

@@ -16,7 +16,7 @@
                 minutes during our operating hours from 6 am to 10 pm. We truly appreciate your patience
                 and can't wait to help you get all the info you need to plan your amazing limousine service.
             </p>
-            <form action="/booking" method="post">
+            <form action="" id="form-booking" method="post">
                 @csrf
                 <div class="row">
                     <div class="col-12">
@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <label for="">Destination</label>
                             <input type="text" name="destination" class="form-control"
-                                value="{{ request('location') ?? '' }}" placeholder="Destination Address">
+                                value="{{ request('destination') ?? '' }}" placeholder="Destination Address">
                         </div>
                         <div class="form-group">
                             <label for="">How many will there be?*</label>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Additional Information</label>
-                            <textarea type="text" name="name" class="form-control contact-text" placeholder="Additional Information"></textarea>
+                            <textarea type="text" name="info" class="form-control contact-text" placeholder="Additional Information"></textarea>
                         </div>
                         <button class="btn bg-danger btn-akm mt-4">Submit</button>
                     </div>
@@ -82,6 +82,25 @@
 
 @push('scripts')
     <!-- JS Libraies -->
+    <script>
+        $('#form-booking').on('submit', function(e) {
+            e.preventDefault();
+            console.log($(this).serialize())
+            // $('#form-booking').reset()
+            swal('Success',
+                'Your data has been send, please wait our time will contact you soon.',
+                'success')
+            // $('#form-booking')[0].reset()
+            $.ajax({
+                type: 'POST',
+                url: '/send-email-booking',
+                data: $(this).serialize(),
+                success: function(data) {
+
+                }
+            })
+        })
+    </script>
 
     <script src="{{ asset('library/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
     <script src="{{ asset('library/bootstrap-timepicker/js/bootstrap-timepicker.min.js') }}"></script>

@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Setting;
+
 return [
 
     /*
@@ -28,7 +30,16 @@ return [
 
     'env' => env('APP_ENV', 'production'),
     'imageStorage' => env('APP_IMAGE', 'vendor/ckfinder/userfiles/'),
-    'email' => env('MAIL_FROM_ADDRESS'),
+    // 'email' => env('MAIL_FROM_ADDRESS'),
+    'mail' => [
+        'username' => env('MAIL_USERNAME'),
+        'password' => env('MAIL_PASSWORD'),
+        'hostname' => env('MAIL_HOST'),
+        'from'     => env('MAIL_FROM_ADDRESS'),
+        'port'     => env('MAIL_PORT'),
+        'encrypt'  => env('MAIL_ENCRYPTION'),
+        'mailer'   => env('MAIL_MAILER')
+    ],
 
     /*
     |--------------------------------------------------------------------------

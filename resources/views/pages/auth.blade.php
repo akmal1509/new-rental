@@ -62,7 +62,7 @@
                         </form>
 
                         <div class="text-small mt-5 text-center">
-                            Copyright &copy; Media Kita. Made with 💙 by Akmal
+                            {{ $settingShare->copyright }}
                         </div>
                     </div>
                 </div>

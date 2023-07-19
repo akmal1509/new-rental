@@ -118,7 +118,8 @@ class SettingController extends Controller
      */
     public function update(UpdateSettingRequest $request, $id)
     {
-        // dd($request->all());
+        // $data = $request->all();
+        // dd(request('mail.mailer'));
         $this->settingRepository->update($id, $request->all());
         return redirect('/admin/' . $this->slugData)
             ->with('success_message', 'Data was successfully update.');

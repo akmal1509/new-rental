@@ -28,6 +28,7 @@ Route::get('/contact', [HomeController::class, 'contact']);
 Route::get('/blog/single', [HomeController::class, 'singleBlog']);
 Route::get('/rent/{slug}', [HomeController::class, 'singleRent']);
 Route::post('/send-email-contact', [HomeController::class, 'sendContact']);
+Route::post('/send-email-booking', [HomeController::class, 'sendBooking']);
 // Route::get('/rent/single', [HomeController::class, 'singleRent']);
 
 Route::get('/test', function () {
@@ -36,8 +37,8 @@ Route::get('/test', function () {
 
 Route::controller(AuthController::class)
     ->group(function () {
-        Route::get('/mejakami', 'index')->middleware('guest')->name('login');
-        Route::post('/mejakami', 'authenticate');
+        Route::get('/administrator', 'index')->middleware('guest')->name('login');
+        Route::post('/administrator', 'authenticate');
         Route::post('/logout', 'logout');
     });
 

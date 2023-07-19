@@ -129,7 +129,27 @@ class HomeController extends Controller
         ];
         // return $data;
         Mail::send('pages.emailContact', $data, function ($message) use ($data) {
-            $message->to(config('app.email'));
+            $message->subject('New Message Customer')
+                ->to(config('app.mail.username'));
+        });
+    }
+    public function sendBooking(Request $request)
+    {
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'pickUpDate' => $request->pickUpDate,
+            'pickUpTime' => $request->pickUpTime,
+            'location' => $request->location,
+            'destination' => $request->destination,
+            'passenger' => $request->passenger,
+            'carName' => $request->carName,
+            'info' => $request->info
+        ];
+        // return $data;
+        Mail::send('pages.emailBooking', $data, function ($message) use ($data) {
+            $message->subject('New Booking Customer')->to(config('app.mail.username'));
         });
     }
 

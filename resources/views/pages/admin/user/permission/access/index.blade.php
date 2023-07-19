@@ -65,7 +65,7 @@
                 },
                 success: function(data) {
                     $('.permission').html(data)
-                    // console.log(data)
+                    console.log(data)
                 },
             })
         }
