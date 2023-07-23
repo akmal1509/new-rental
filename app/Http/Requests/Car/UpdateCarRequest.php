@@ -28,8 +28,6 @@ class UpdateCarRequest extends FormRequest
             'name' => 'required',
             'slug' => 'required|unique:cars,slug,' . $id,
             'image' => 'required',
-            'locationId' => ['required', 'array', 'min:1'],
-            'locationId.*' => ['required', 'integer', 'exists:locations,id'],
             'body' => 'required'
         ];
     }

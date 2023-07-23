@@ -34,7 +34,7 @@ class CarRepository extends BaseRepository
     {
         $result = [
             'currency' => Setting::pluck('currency')->first(),
-            'location' => Location::all(),
+            // 'location' => Location::all(),
         ];
 
         return $result;

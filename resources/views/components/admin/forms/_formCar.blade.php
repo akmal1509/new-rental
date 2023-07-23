@@ -29,25 +29,6 @@
                     <small id="slug_status" class="invalid-feedback" hidden>Slug is Already
                         Exist</small>
                 </div>
-                <div class="row">
-                    <div class="form-group col-12">
-                        <label for="">location</label>
-                        <select id="locationId"
-                            class="form-control select2 akm-check @error('locationId')
-                        is-invalid
-                    @enderror"
-                            name="locationId[]" multiple="">
-                            @foreach ($option['location'] as $location)
-                                <option value="{{ $location->id }}"
-                                    {{ Request::old('locationId[]') || in_array($location->id, $data->locationId) ? 'selected' : '' }}>
-                                    {{ $location->name }}</option>
-                            @endforeach
-                        </select>
-                        @error('locationId')
-                            <small id="" class="invalid-feedback">{{ $message }}</small>
-                        @enderror
-                    </div>
-                </div>
                 <div class="form-group">
                     <label for="">Price</label>
                     <div class="input-group">

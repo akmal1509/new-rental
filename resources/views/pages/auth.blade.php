@@ -31,7 +31,7 @@
                         <h4 class="text-dark font-weight-normal">This <span class="font-weight-bold">Dashboard
                                 Login</span>
                         </h4>
-                        <form method="POST" action="/mejakami" class="needs-validation" novalidate="">
+                        <form method="POST" action="/administrator" class="needs-validation" novalidate="">
                             @csrf
                             <div class="form-group">
                                 <label for="username">Username</label>

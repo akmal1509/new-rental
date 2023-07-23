@@ -27,8 +27,6 @@ class StoreCarRequest extends FormRequest
             'name' => 'required',
             'slug' => 'required|unique:cars',
             'image' => 'required',
-            'locationId' => ['required', 'array', 'min:1'],
-            'locationId.*' => ['required', 'integer', 'exists:locations,id']
         ];
     }
 }
